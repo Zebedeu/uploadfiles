@@ -1,6 +1,6 @@
 
 {
-    "name": "apweb/UploadFlies",
+    "name": "apweb/uploadflies",
     "type": "library",
     "description": " class para uploads de Files",
     "keywords": ["Upload","php"],
