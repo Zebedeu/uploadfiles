@@ -16,9 +16,8 @@
  * @version   1.0.0
  */
 
-namespace Upload;
 
-class Uploads implements interfaceUploads {
+class Uploads  {
 
    
     private $files;
@@ -40,11 +39,9 @@ class Uploads implements interfaceUploads {
 
                     $explode = explode('.', $name);
                     $ext = end($explode);
-                    if(Session::exist() ){
-                    $this->path = DIR_FILE . 'Upload' . DS . Session::get('U_NAME') . DS . $dir . DS;
-                } else{
+                   
                     $this->path = DIR_FILE . 'Upload' . DS . 'Default' . DS . $dir . DS;
-                }
+                
                     $this->path .= basename($explode[0] . time() . '.' . $ext);
                     $explode = explode('.', $name);
 
@@ -69,12 +66,11 @@ class Uploads implements interfaceUploads {
             } // end if
 
             if (empty($errors)) {
-                if(Session::exist() ){
-                if (!file_exists(DIR_FILE . 'Upload' . DS . Session::get('U_NAME') . DS . $dir . DS)) {
-                    mkdir(DIR_FILE . 'Upload' . DS . Session::get('U_NAME') . DS . $dir . DS, 0777, true);
+              
+                if (!file_exists(DIR_FILE . 'Upload'  . DS . $dir . DS)) {
+                    mkdir(DIR_FILE . 'Upload' .  DS . $dir . DS, 0777, true);
                   
                   }  // chmod('uploads/', 0755);
-                } // end Session exist
                 else if (!file_exists(DIR_FILE . 'Upload' . DS . 'Default' . DS . $dir . DS)) {
                     mkdir(DIR_FILE . 'Upload' . DS . 'Default' . DS . $dir . DS, 0777, true);
                   
