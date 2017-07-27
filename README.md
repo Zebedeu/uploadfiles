@@ -2,7 +2,6 @@
 Classe para carregar files 
 
 
-This will install Slim and all required dependencies. Slim requires PHP 5.5.0 or newer.
 
 ## Usage
 
