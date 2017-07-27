@@ -2,6 +2,51 @@
 Classe para carregar files 
 
 
+This will install Slim and all required dependencies. Slim requires PHP 5.5.0 or newer.
+
+## Usage
+
+Create an image class that extends the class Uploads
+
+
+require 'Uploads.php';
+
+class Image extends Uploads {
+
+public $img;
+
+public function __construct($d){
+		$this->img = $this->file($d);
+}
+
+	public function img() {
+
+		$this->img;
+	}
+}
+
+Create an index.php file with the following contents:
+
+```php
+<?php
+
+
+define('DS', DIRECTORY_SEPARATOR);
+
+define('PV', 'Image' . DS);
+
+define('DIR_FILE', PV  . DS);
+
+
+
+
+require 'Upload/Image.php';
+
+$d = new Image('Up');
+echo $d->formUploadFiles($d->img());
+
+
+
 
 
 
