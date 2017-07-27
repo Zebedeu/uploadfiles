@@ -7,6 +7,8 @@ Classe para carregar files
 
 Create an image class that extends the class Uploads
 
+```php
+<?php
 
 require 'Uploads.php';
 
