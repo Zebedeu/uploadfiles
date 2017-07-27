@@ -12,12 +12,12 @@ require 'Uploads.php';
 
 class Image extends Uploads {
 
-public $img;
+private $img;
 
 public function __construct($d){
 
 		$this->img = $this->file($d);
-}
+	}
 
 	public function img() {
 
