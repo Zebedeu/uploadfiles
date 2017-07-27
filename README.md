@@ -27,6 +27,8 @@ public function __construct($d){
 	}
 }
 
+?>
+
 Create an index.php file with the following contents:
 
 ```php
