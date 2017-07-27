@@ -15,6 +15,7 @@ class Image extends Uploads {
 public $img;
 
 public function __construct($d){
+
 		$this->img = $this->file($d);
 }
 
