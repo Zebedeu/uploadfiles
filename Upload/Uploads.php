@@ -17,7 +17,7 @@
  */
 
 
-class Uploads  {
+class Uploads{
 
    
     private $files;
