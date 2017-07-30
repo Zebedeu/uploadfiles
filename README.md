@@ -6,9 +6,9 @@ Classe para carregar files
 
 > Estatísticas
 
-[![Total Downloads](https://poser.pugx.org/Zebedeu/uploadfiles/downloads)](https://packagist.org/packages/Zebedeu/uploadfiles)
-[![Daily Downloads](https://poser.pugx.org/Zebedeu/uploadfiles/d/daily)](https://packagist.org/packages/Zebedeu/uploadfiles)
-[![Monthly Downloads](https://poser.pugx.org/Zebedeu/uploadfiles/d/monthly)](https://packagist.org/packages/Zebedeu/uploadfiles)
+[![Total Downloads](https://poser.pugx.org/apweb/uploadflies/downloads)](https://packagist.org/packages/apweb/uploadflies)
+[![Daily Downloads](https://poser.pugx.org/apweb/uploadflies/d/daily)](https://packagist.org/packages/apweb/uploadflies)
+[![Monthly Downloads](https://poser.pugx.org/apweb/uploadflies/d/monthly)](https://packagist.org/packages/apweb/uploadflies)
 
 
 ## Usage
