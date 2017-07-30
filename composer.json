@@ -1,6 +1,6 @@
 
 {
-    "name": "apweb/uploadflies",
+    "name": "Zebedeu/uploadfiles",
     "type": "library",
     "description": " class para uploads de Files",
     "keywords": ["Upload","php"],
