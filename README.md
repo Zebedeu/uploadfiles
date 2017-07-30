@@ -1,8 +1,7 @@
 # UploadFiles
 Classe para carregar files 
 
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Zebedeu/uploadfiles/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Zebedeu/uploadfiles/?branch=master)
-[![Code Climate](https://codeclimate.com/github/Zebedeu/uploadfiles/badges/gpa.svg)](https://codeclimate.com/github/Zebedeu/uploadfiles)
+
 [![Build Status](https://travis-ci.org/Zebedeu/uploadfiles.svg?branch=master)](https://travis-ci.org/Zebedeu/uploadfiles)
 
 > Estatísticas
