@@ -1,15 +1,15 @@
 # UploadFiles
 Classe para carregar files 
 
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/apweb/uploadflies/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/apweb/uploadflies/?branch=master)
-[![Code Climate](https://codeclimate.com/github/apweb/uploadflies/badges/gpa.svg)](https://codeclimate.com/github/apweb/uploadflies)
-[![Build Status](https://travis-ci.org/apweb/uploadflies.svg?branch=master)](https://travis-ci.org/apweb/uploadflies)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Zebedeu/uploadfiles/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Zebedeu/uploadfiles/?branch=master)
+[![Code Climate](https://codeclimate.com/github/Zebedeu/uploadfiles/badges/gpa.svg)](https://codeclimate.com/github/Zebedeu/uploadfiles)
+[![Build Status](https://travis-ci.org/Zebedeu/uploadfiles.svg?branch=master)](https://travis-ci.org/Zebedeu/uploadfiles)
 
 > Estatísticas
 
-[![Total Downloads](https://poser.pugx.org/preetender/routing/downloads)](https://packagist.org/packages/apweb/uploadflies)
-[![Daily Downloads](https://poser.pugx.org/apweb/uploadflies/d/daily)](https://packagist.org/packages/apweb/uploadflies)
-[![Monthly Downloads](https://poser.pugx.org/apweb/uploadflies/d/monthly)](https://packagist.org/packages/apweb/uploadflies)
+[![Total Downloads](https://poser.pugx.org/preetender/routing/downloads)](https://packagist.org/packages/Zebedeu/uploadfiles)
+[![Daily Downloads](https://poser.pugx.org/Zebedeu/uploadfiles/d/daily)](https://packagist.org/packages/Zebedeu/uploadfiles)
+[![Monthly Downloads](https://poser.pugx.org/Zebedeu/uploadfiles/d/monthly)](https://packagist.org/packages/Zebedeu/uploadfiles)
 
 
 ## Usage
