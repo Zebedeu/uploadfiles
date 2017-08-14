@@ -53,8 +53,8 @@ define('DIR_FILE', PV  . DS);
 
 require 'Upload/Image.php';
 
-$d = new Image('Up');
-echo $d->formUploadFiles($d->img());
+$obj = new Image('Up');
+echo $obj->formUploadFiles($obj->img());
 
 
 
