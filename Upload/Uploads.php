@@ -15,9 +15,6 @@
  * @version   1.0.0
  */
 
-define("DIR_FILE", '/');
-define('DS', '/');
-
 /**
  * Class Uploads
  * @package Ballybran\Helpers
