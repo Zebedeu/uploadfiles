@@ -1,7 +1,6 @@
 <?php
 
 /**
- *
  * APWEB Framework (http://framework.artphoweb.com/)
  * APWEB FW(tm) : Rapid Development Framework (http://framework.artphoweb.com/)
  *
@@ -10,97 +9,127 @@
  * Redistributions of files must retain the above copyright notice.
  *
  * @link      http://github.com/zebedeu/artphoweb for the canonical source repository
- * @copyright (c) 2016.  APWEB  Software Technologies AO Inc. (http://www.artphoweb.com)
+ * @copyright (c) 2015.  APWEB  Software Technologies AO Inc. (http://www.artphoweb.com)
  * @license   http://framework.artphoweb.com/license/new-bsd New BSD License
  * @author    Marcio Zebedeu - artphoweb@artphoweb.com
  * @version   1.0.0
  */
 
+define("DIR_FILE", '/');
+define('DS', '/');
 
-class Uploads{
+/**
+ * Class Uploads
+ * @package Ballybran\Helpers
+ */
+class Uploads 
+{
 
-   
-    private $files;
+    /**
+     * @var
+     */
     public $path;
+    /**
+     * @var
+     */
     private $tmp;
+    /**
+     * @var
+     */
     public $name;
+    /**
+     * @var
+     */
     public $size;
+    /**
+     * @var
+     */
     public $type;
+    /**
+     * @var array
+     */
+    private $explode;
+    
+    /**
+     * @var
+     */
+    private $ext;
+    /**
+     * @var
+     */
     private $dir;
 
-    public function file($dir = null) {
-        if (!empty($dir)) {
-            if (isset($_FILES['archive'])) {
-                foreach ($_FILES['archive']['name'] as $i => $name) {
-                    $this->name = $_FILES['archive']['name'][$i];
-                    $this->size = $_FILES['archive']['size'][$i];
-                    $this->type = $_FILES['archive']['type'][$i];
-                    $this->tmp = $_FILES['archive']['tmp_name'][$i];
 
-                    $explode = explode('.', $name);
-                    $ext = end($explode);
-                   
-                    $this->path = DIR_FILE . 'Upload' . DS . 'Default' . DS . $dir . DS;
-                
-                    $this->path .= basename($explode[0] . time() . '.' . $ext);
-                    $explode = explode('.', $name);
+    /**
+     * Uploads constructor.
+     */
+    function __construct()
+    {
 
-                    // echo $ext . "<br/>";
+        if (isset($_FILES['archive'])) {
 
+            foreach ($_FILES['archive']['name'] as $i => $name) {
+                $this->name = $_FILES['archive']['name'][$i];
+                $this->size = $_FILES['archive']['size'][$i];
+                $this->type = $_FILES['archive']['type'][$i];
+                $this->tmp = $_FILES['archive']['tmp_name'][$i];
 
+                $this->explode = explode('.', $name);
 
-                    if (empty($this->type)) {
-                        return $errors[] = '<div class="btn btn-danger"> Por favor, escolhe 1 ficheiro para ser carregado</div>';
-                    } else {
-                        $allowed = array('jpg', 'JPG', 'jpeg', 'gif', 'btm', 'png', 'txt', 'docx', 'doc', 'pdf', 'mp3');
-
-                        if (in_array($ext, $allowed) === false)
-                            return $errors[] = '<div class="btn btn-danger">A extensao do ficheiro nao foi permitido </div>';
-                    }
-//                              100000000
-                    $max_size = 100000000;
-                    if ($this->size > $max_size) {
-                        return $errors[] = '<div class="btn btn-danger"> O tamanho do ficheiro é muito grande</div>';
-                    }
-                }// end foreach
-            } // end if
-
-            if (empty($errors)) {
-              
-                if (!file_exists(DIR_FILE . 'Upload'  . DS . $dir . DS)) {
-                    mkdir(DIR_FILE . 'Upload' .  DS . $dir . DS, 0777, true);
-                  
-                  }  // chmod('uploads/', 0755);
-                else if (!file_exists(DIR_FILE . 'Upload' . DS . 'Default' . DS . $dir . DS)) {
-                    mkdir(DIR_FILE . 'Upload' . DS . 'Default' . DS . $dir . DS, 0777, true);
-                  
-                  }  // chmod('uploads/', 0755);
-                
-                if (move_uploaded_file($this->tmp, $this->path )) {
-                    $output = '<div class="btn btn-success">';
-                    $output .= 'Ficheiro carregado  com sucesso';
-                    $output .= '</div>';
-                    return $output;
-                } else {
-                    $output = '<div class="btn btn-warning">';
-                    $output .= 'Nenhum ficheiro foi carregado';
-                    $output .= '</div>';
-                    return $output;
-                }
             }
         }
     }
 
 
-    public function formUploadFiles($dir_rec = null, $type = "hidden", $name = null, $value = null) {
-        $var = "";
-        $var .= "<form method='POST' enctype='multipart/form-data' action='" . $dir_rec . "'>";
-        $var .= "<input type='hidden' name=' ini_get('session.upload_progress.name'); ' value='123' />";
+    /**
+     * @param null $dir
+     */
+    public function file($dir = null)
+    {
+        $this->dir = $dir;
 
-        $var .= "<input type='file' name='archive[]' multiple ><br/>";
-        $var .= "<input type='$type' name='$name' value='$value'> <br/>";
-        $var .= "<button type='submit'  class=' btn btn-lg btn-default glyphicon glyphicon-upload'></button></form>";
-        return $var;
+        $this->make();
+    }
+
+    /**
+     * @return string
+     */
+    private function make()
+    {
+            $this->makePathBayUserName();
+            $this->makeDefaultPath();
+            $this->makePathDirIfDefaultFileNotExist();
+            return $this->move_upload();
+
+    }
+
+
+    private function makePathDirIfDefaultFileNotExist()
+    {
+
+        if (!file_exists(DIR_FILE . 'Upload' . DS . 'Default' . DS . $this->dir . DS)) {
+            mkdir(DIR_FILE . 'Upload' . DS . 'Default' . DS . $this->dir . DS, 0755, true);
+
+        }
+    }
+
+    private function move_upload()
+    {
+        var_dump($this->path);
+        move_uploaded_file($this->tmp, $this->path);
+
+    }
+
+    private function makeDefaultPath()
+    {
+        $this->path = DIR_FILE . 'Upload' . DS . 'Default' . DS . $this->dir . DS;
+
+    }
+
+    private function makePathBayUserName()
+    {
+        $this->ext = end($this->explode);
+        $this->path .= basename($this->explode[0] . time() . '.' . $this->ext);
     }
 
 }
