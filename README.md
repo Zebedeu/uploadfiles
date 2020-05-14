@@ -15,6 +15,11 @@ Classe para carregar files
 
 Create an image class that extends the class Uploads
 
+        <form method="post" enctype="multipart/form-data">
+            <input type="file" name="archive[]" >
+            <input type="submit" value="Upload">
+        </form>
+
 ```php
 
 if(!empty($_FILES['archive'])) {
