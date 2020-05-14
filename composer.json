@@ -1,6 +1,6 @@
 
 {
-    "name": "Zebedeu/uploadfiles",
+    "name": "zebedeu/uploadfiles",
     "type": "library",
     "description": " class para uploads de Files",
     "keywords": ["Upload","php"],
@@ -10,7 +10,7 @@
         {
             "name": "Marcio Zebede",
             "email": "marciozebedeu@gmail.com",
-            "homepage": "http://artphoweb.com",
+            "homepage": "http://marciozebedeu.com",
             "role": "Developer"
         }
     ],
